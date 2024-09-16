@@ -1,0 +1,36 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(form)" class="border border-primary p-3 my-3 rounded container col-4">
+    <h3>Apólice de Seguro</h3>
+    <div class="row mb-3">
+        <div class="col">
+            <label for="name">Nome do Segurado</label>
+            <input type="text" id="name" class="form-control" ngModel name="name">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <label for="age">Idade</label>
+            <input type="number" id="age" class="form-control" required ngModel name="age">
+        </div>
+        <div class="col-8">
+            <label for="sex">Sexo</label>
+            <select ngModel name="sex" id="sex" class="form-select me-2" required ngModel name="sex">
+                <option value="M">Masculino</option>
+                <option value="F">Feminino</option>
+            </select>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <label for="value">Valor do automóvel</label>
+            <div class="input-group">
+                <span class="input-group-text">R$</span>
+                <input type="number" id="value" class="form-control" name="value" required ngModel name="value">
+            </div>
+        </div>
+    </div>
+    <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Calcular</button>
+</form>
+<div *ngIf="form.submitted" class="container text-center p-3 border border-primary">
+    <h3>Valor da Apólice</h3>
+    <h4>R$ {{consultor.apolice}}</h4>
+</div>

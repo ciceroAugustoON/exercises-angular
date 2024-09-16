@@ -1,0 +1,38 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(form)" class="p-5 border border-primary rounded">
+    <h3>Insira as notas do semestre:</h3>
+    <div class="mb-3">
+      <label for="ac1Input" class="form-label">AC1</label>
+      <input type="number" class="form-control" id="ac1Input" ngModel name='ac1'>
+    </div>
+    <div class="mb-3">
+        <label for="ac2Input" class="form-label">AC2</label>
+        <input type="number" class="form-control" id="ac2Input" ngModel name = 'ac2'>
+    </div>
+    <div class="mb-3">
+        <label for="agInput" class="form-label">AG</label>
+        <input type="number" class="form-control" id="agInput" ngModel name = 'ag'>
+    </div>
+    <div class="mb-3">
+        <label for="afInput" class="form-label">AF</label>
+        <input type="number" class="form-control" id="afInput" ngModel name = 'af'>
+    </div>
+    <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Enviar</button>
+  </form>
+  <!--Modal-->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">{{message}}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Sua nota foi {{media.final}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
